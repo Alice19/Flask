@@ -1,0 +1,18 @@
+------------------------------------------
+The Folder "sessionsGAEstore":-
+------------------------------------------
+This is a store which enables storing sessions on the server in a database and is meant for use on GAE.
+The session id is saved as a cookie on the client and the sessiondata is saved in a column in the Table.
+
+The Model class or the table has to be defined in GAE as follows:-
+class MyNewSessionTable(db.Model):
+    sessid=db.StringProperty(multiline=True)
+    sessiondata=db.BlobProperty()
+
+The store GAEsessions has to be pasted or imported into werkzeug.contrib.sessions 
+
+After that go to your app and use it like I have used it in the __init__.py file . The init.py file contains the code written by hewew(on Flask mailing list) and Armin(the creator of flask)
+
+Take care of the below
+1.check for the presence of sessions using sessions.get('attributeorwhatever'), else a keyerror will be raised if the attribute is not present
+
