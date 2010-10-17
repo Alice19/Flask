@@ -1,4 +1,8 @@
-(Meant for the Flask Framework)
+(Meant for the Flask Framework which I am learning to use)
+
+-------------------------------------------
+The Folder "sessionsGAEstore":-
+------------------------------------------
 This is a store which enables storing sessions on the server in a database and is meant for use on GAE.
 The session id is saved as a cookie on the client and the sessiondata is saved in a column in the Table.
 
