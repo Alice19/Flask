@@ -2,9 +2,11 @@ from flask import Flask
 import settings
 from werkzeug.contrib.sessions import DataBaseStore,Session
 from models import MyNewSessionTable
-from flask import render_template, flash, url_for, redirect,g,session,request,Flask,abort
+from flask import render_template, flash, url_for, redirect,g,session,request
 from google.appengine.ext import db
+
 session_store=DataBaseStore(tablename=MyNewSessionTable)
+####taken from the code by hewew ############
 class SessionMixin(object):
     session_key='sessionid'
     def open_session(self, request):
@@ -24,9 +26,10 @@ class SessionFlask(SessionMixin,Flask):
     pass
 
 ##progbegins
-app=SessionFlask('travelbuddy')
-app.config.from_object('travelbuddy.settings')
+app=SessionFlask('alice')
+app.config.from_object('alice.settings')
 
+##########the testing code written by Armin(the creator of flask) for checking some sessions module written by him#########
 @app.before_request
 def pull_user():
     g.user = session.get('username')
