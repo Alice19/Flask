@@ -1,0 +1,1 @@
+This is supposed to help saving sessions in the google datastore. I have used it along with the werkzeug.contrib.sessions library.
