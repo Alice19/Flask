@@ -1,0 +1,9 @@
+I have found logging events into the dbase as a big big headache. Although it is a important thing to have in your web app, but the job is n fact quite boring. All this now gets solved using the blinker library. You can read how the library functions on the blinker site , but here is how i implemented it in one of my app.
+
+the file views.py has three functions:-
+1.home
+2.login
+3.thelogger--this logs the events that occur in the above two functions..
+
+
+'home' and 'login' funcs generate signals which are caught by 'thelogger' func and it just puts them in the dbase.And yes I am using GAE here but anything can be used
