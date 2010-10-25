@@ -29,4 +29,6 @@ class DataBaseStore(SessionStore):
         rowwithsid=self.get_sessionrow_db(sid)
         if rowwithsid is not None:
             data=loads(rowwithsid.sessiondata)
+	else:
+	    data={}
         return self.session_class(data,sid,False)
